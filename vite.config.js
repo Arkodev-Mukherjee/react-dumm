@@ -5,5 +5,4 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   base:'./',
   plugins: [react()],
-  base: process.env.VITE_BASE_PATH || '/',
 })

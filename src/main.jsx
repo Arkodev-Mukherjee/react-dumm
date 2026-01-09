@@ -1,15 +1,15 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App'
 import './index.css'
-import App from './App.jsx'
-import { BrowserRouter } from 'react-router'
-const basePath = window.location.pathname.replace(/\/$/, ''); // strips trailing slash
+
+const BASE_PATH = import.meta.env.VITE_BASE_PATH || '/'
 
 createRoot(document.getElementById('root')).render(
-
-  <BrowserRouter basename={process.env.VITE_BASE_PATH}>
-    <StrictMode>
+  <StrictMode>
+    <BrowserRouter basename={BASE_PATH}>
       <App />
-    </StrictMode>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </StrictMode>
 )
